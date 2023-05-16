@@ -1,0 +1,105 @@
+.EasyGunLabel{
+    
+    align-self: center;
+    
+    font-size: 15px;
+    
+}
+
+.ContentContainer:hover{
+    
+    background-color: rgb(70, 70, 70);
+    opacity: 20;
+    flex-grow: 1;
+    
+}
+
+.Foldout{
+    
+    -unity-font-style: bold;
+    font-size: 13px;
+    
+}
+
+.CenteredCharge{
+    
+    margin-top: 5px;
+    align-self: center;
+    width: 100px;
+    
+}
+
+.ChargeOuter{
+    
+    height : 25px;
+    background-color: dimgray;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    
+}
+
+.ChargeInner{
+    
+    background-color: green;
+    border-radius: 3px;
+    flex-grow: .005;
+    
+}
+
+.ChargeVariableAlignment{
+    
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: row;
+    
+}
+
+.Spreader{
+    
+    flex-grow: 1;
+    
+}
+
+.ChargeVariable{
+    
+    width : 50px;
+    
+}
+
+.MagazineDisplay{
+
+    background-color: rgb(42, 42, 42);
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: stretch;
+    min-height: 20px;
+    
+}
+
+.Grow{
+    
+    flex-grow: 1;
+    
+}
+
+.MagazineDisplayFoldout{
+    
+    padding-left: 12px;
+    
+}
+
+.AlignCenter{
+    
+    align-self: center;
+    
+}
+
+.AccuracyVariableAlignment{
+
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: row;
+    height: 25px
+    
+}

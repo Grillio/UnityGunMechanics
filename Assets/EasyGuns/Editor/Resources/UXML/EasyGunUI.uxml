@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+    
+    <engine:VisualElement name = "WholeContainer" class = "Grow">
+        <engine:Label text = "EasyGun" class = "EasyGunLabel"/>
+        
+        <engine:Button text = "Configure EasyGun" name = "ConfigureEasyGunButton"/>
+        <engine:Toggle name = "IsConfigured"/>
+        
+        <engine:VisualElement name = "WholeInnerContainer">
+        
+        <engine:VisualElement name = "SpecsContainer" class = "ContentContainer">
+        <editor:EnumField text = "Weapon Type" name = "WeaponType" tooltip="The type of weapon the EasyGun is"/>
+        <editor:EnumField text = "Shooting Type" name = "ShotType" tooltip="The way the easy gun shoots::: Hitscan = raycast :: Projectile = Bullet with physics"/>
+            <editor:EnumField name = "ShootingProperty" tooltip="The way the EasyGun rearms itself: Auto = Can hold fire and will keep shooting, Semi = Must press fire to shoot"/>
+            <editor:ObjectField name = "BarrelLocation" label = "Place Holder"/>
+        </engine:VisualElement>
+        
+        <engine:VisualElement name = "DependenciesOuterContainer" class = "ContentContainer">
+
+        <engine:Foldout name = "DependencyFoldout" text = "something" class = "Foldout"/>
+        
+        <engine:VisualElement name = "Dependencies">
+            
+            <engine:VisualElement name = "ProjectileDependents" >
+            <editor:ObjectField name = "BulletAsset" label = "Bullet Asset" tooltip="The bullet asset that get instantiated every shot"/>
+            <editor:FloatField name = "ExitVelocity" label = "Exit Velocity" tooltip="How fast a bullet will exit the barrel"/>
+        </engine:VisualElement>
+        
+            <engine:VisualElement name = "HitscanDependents" >
+            <editor:FloatField name = "Range" label = "Range" tooltip="How far a raycast will go"/>
+        </engine:VisualElement>
+            
+            <editor:FloatField name = "RateOfFire" label = "RateOfFire" tooltip="Shots in a minute"/>
+            <editor:FloatField name = "DepletionPerSecond" label = "Depletion Rate" tooltip="How much the canister depletes per second"/>
+            <editor:FloatField name = "TimeBetweenShots" label = "Time Between Shots" tooltip="Seconds between each shot"/>
+        
+            <engine:VisualElement name = "AutomaticDependents">
+            
+            
+            </engine:VisualElement>
+        
+            <engine:VisualElement name = "SemiDependents">
+            
+            </engine:VisualElement>
+            
+            <engine:VisualElement name = "ShotgunDependents">
+            <editor:IntegerField name = "PelletsPerShot" label = "Pellets Per Shell" tooltip="How many pellets are instantiated when the gun is shot"/>
+            </engine:VisualElement>
+            
+            <engine:VisualElement name = "BurstDependents">
+            
+                <editor:IntegerField name = "ShotsPerBurst" label = "Shots Per Burst" tooltip="How many bullets are shot per burst cycle"/>
+                <editor:FloatField name = "RapidTimeBetweenShots" label = "Time Between Rounds" tooltip="The rapid time between each round shot in a burst cycle: (Seconds)"/>
+            
+        </engine:VisualElement> 
+            
+            <engine:VisualElement name = "BowDependents">
+                
+                <editor:FloatField name = "TimeToCharge" label = "Time To Charge" tooltip="Time to charge the bow to full force"/>
+                <engine:Label name = "ChargePower" class = "CenteredCharge" text = "PlaceHolder" tooltip="The force of the arrow when it leaves the bow"/>
+                <editor:FloatField name = "BowForce"/>
+                <engine:VisualElement name = "BowChargeDisplay" class = "ChargeOuter">
+                    <engine:VisualElement class = "ChargeInner" name = "BowChargeInner"/>
+                </engine:VisualElement>
+                <engine:VisualElement class = "ChargeVariableAlignment">
+                    <engine:Label text = "Min:"/>
+                    <editor:FloatField name = "MinForce" class = "ChargeVariable" tooltip="The minimum force the arrow will leave the bow"/>
+                        <engine:VisualElement class = "Spreader"/>
+                    <engine:Label text = "Max:"/>
+                    <editor:FloatField name = "MaxForce" class = "ChargeVariable" tooltip="The maximum force the arrow will leave the bow"/>
+                </engine:VisualElement>
+                
+            </engine:VisualElement>
+            
+            <engine:VisualElement name = "FlamethrowerDependents">
+                
+                
+                
+            </engine:VisualElement>
+            
+            <engine:VisualElement name = "LaserDependents">
+                
+                
+                
+            </engine:VisualElement>
+            
+            <engine:VisualElement name = "RailgunDependents">
+                
+                
+                
+            </engine:VisualElement>
+
+            <engine:Slider name = "AccuracyFloat" label = "Accuracy%" tooltip="How much spread the gun has"/>
+            
+        </engine:VisualElement>
+        </engine:VisualElement>
+
+        <engine:VisualElement name = "MagazineAndCanisterOuterContainer" class = "ContentContainer">
+            
+            <engine:Foldout name = "MagazineAndCanisterFoldout" text = "Place Holder" class = "Foldout"/>
+
+            <engine:VisualElement name = "MagazineAndCanisterContainer" class = "Grow">
+
+                <editor:EnumField name = "ReloadProperty" label = "Reload Property" tooltip="How the laser gun is going to reload"/>
+                <editor:FloatField name = "ReloadTime" label = "Reload Time" tooltip="How many seconds it takes to reload"/>
+                <editor:FloatField name = "RechargeDelay" label = "Recharge Delay" tooltip="How long after shooting the laser gun will start recharging"/>
+                <editor:FloatField name = "RechargeRate" label = "Recharge Per Second" tooltip="How much the power cell will charge per second"/>
+            
+                <engine:VisualElement name = "MagazineContainer" class = "Grow">
+                
+                    <editor:IntegerField name = "MaxBullets" label = "Max Bullets"/>
+                    <editor:IntegerField name = "CurrentBulletCount" label = "CurrentBulletCount"/>
+                    <engine:Foldout name = "MagazineDisplayFoldout" text = "Place Holder" class = "MagazineDisplayFoldout"/>
+                    <engine:VisualElement name = "MagazineDisplay" class = "MagazineDisplay">
+                        
+                    </engine:VisualElement>
+                    
+                </engine:VisualElement>
+                
+                <engine:VisualElement name = "CanisterContainer">
+                    
+                    <engine:Foldout name = "CanisterDisplayFoldout" class = "MagazineDisplayFoldout" text = "place holder"/>
+                    <engine:VisualElement name = "CanisterDisplayContainer">
+                    <engine:VisualElement name = "CanisterDisplayOuter" class = "ChargeOuter">
+                        <engine:VisualElement name = "CanisterDisplayInner" class = "ChargeInner"/>
+                    </engine:VisualElement>
+                    <engine:VisualElement class = "ChargeVariableAlignment">
+                        <engine:VisualElement class = "Spreader"/>
+                        <engine:Label text = "place holder" name = "MaxCanisterCapacityLabel"/>
+                        <editor:FloatField name = "RemainingFuel"/>
+                        <editor:FloatField name = "MaxCanisterCapacity" class = "ChargeVariable"/>
+                    </engine:VisualElement>
+                        
+                    </engine:VisualElement>
+                    
+                    
+                </engine:VisualElement>
+                
+            </engine:VisualElement>
+            
+        </engine:VisualElement>
+            
+            <engine:VisualElement class = "ContentContainer">
+            <engine:Foldout name = "AudioContainerFoldout" label = "Audio" text = "Audio" class = "Foldout"/>
+            <engine:VisualElement name = "AudioContainer">
+
+                <editor:ObjectField name = "ShotAudio" label = "Shot Audio" tooltip="Sound the gun makes per shot"/>
+                <editor:ObjectField name = "FailedShotAudio" label = "Failed Shot Audio" tooltip="Sound the gun makes when the gun tries to shoot with no bullets"/>
+                <editor:ObjectField name = "ReloadAudio" label = "Reload Audio" tooltip="Reload sound"/>
+                
+            </engine:VisualElement>
+            </engine:VisualElement>
+        
+    </engine:VisualElement>
+    
+    </engine:VisualElement>
+    
+</engine:UXML>
